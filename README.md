@@ -1,49 +1,25 @@
-# InstaSave — starter PWA
+# InstaSave v0.1 — PWA Glass
 
-Interfaz inicial glassmorphism para Android/PWA. Incluye validación básica de enlaces, historial local, manifest, service worker e instalación PWA.
+Versión inicial para Android y GitHub Pages. Incluye interfaz glassmorphism, validación de enlaces de publicaciones/reels/carruseles, historial local, manifest, service worker e iconos.
 
-## Importante: estado real de las descargas
-Este starter **todavía no descarga archivos**. La interfaz reconoce URLs de publicaciones/reels/carruseles y guarda el historial. Instagram no ofrece una API pública general para descargar cualquier publicación. No se debe implementar scraping que evada inicio de sesión, controles de acceso, cuentas privadas o límites de la plataforma.
+## Importante
+Esta versión todavía NO descarga fotos ni videos. Solo valida el formato del enlace y guarda el historial local. Para descargar medios autorizados necesitaremos conectar un backend seguro. No se evaden cuentas privadas, inicios de sesión ni controles de acceso de Instagram.
 
-## Siguiente etapa: servicio de procesamiento
-Conectar `POST /api/resolve` en un backend propio. El backend debe:
-- Aceptar únicamente URLs públicas y permitidas.
-- Respetar derechos de autor, permisos y términos aplicables.
-- No pedir ni almacenar contraseñas/cookies de Instagram.
-- Devolver metadatos y enlaces de medios únicamente cuando el acceso esté permitido.
-- Aplicar límites de uso, validación de dominio y protección contra SSRF.
-- Entregar archivos con nombres/tipos MIME seguros.
+## Subida desde Android
+1. Descarga y extrae este ZIP en tu teléfono.
+2. En GitHub abre el repositorio `pexa0n2k-hub/InstalSave`.
+3. Sube los archivos de la raíz: `index.html`, `styles.css`, `app.js`, `manifest.webmanifest`, `sw.js` y `README.md`.
+4. Crea/abre la carpeta `assets` en el repositorio y sube dentro `icon-192.png` e `icon-512.png`.
+5. En Settings → Pages selecciona `Deploy from a branch`, rama `main` y carpeta `/ (root)`.
+6. Abre `https://pexa0n2k-hub.github.io/InstalSave/` cuando termine el despliegue.
 
-Respuesta sugerida:
-```json
-{
-  "ok": true,
-  "media": [
-    {"type":"image","url":"https://...","filename":"instasave-01.jpg"}
-  ]
-}
-```
-La aplicación debe validar la respuesta antes de habilitar descargas.
+GitHub desde el navegador móvil no descomprime automáticamente ZIP dentro del repositorio. Primero extrae el ZIP en el teléfono y después sube los archivos por separado. No subas el ZIP como si fuera el código fuente.
 
-## Probar
-1. Sube el contenido de esta carpeta a un repositorio GitHub.
-2. Activa GitHub Pages desde Settings → Pages → Deploy from a branch → `main` / root.
-3. Abre la URL HTTPS en Chrome Android y usa el menú ⋮ → Instalar aplicación o Añadir a pantalla principal.
-
-## Convertir a APK después
-Cuando la PWA esté estable, añadir Capacitor:
-```bash
-npm init -y
-npm install @capacitor/core @capacitor/cli
-npx cap init InstaSave com.instasave.app
-npm install @capacitor/android
-npx cap add android
-```
-Para compilar APK se necesita Android Studio/SDK (local o CI). El proyecto web puede seguir publicándose en GitHub Pages.
-
-## Próximas mejoras
-- Conectar backend compatible.
-- Vista previa real de los medios autorizados.
-- Descarga individual y descarga múltiple de carruseles.
-- Permisos/compartir y guardado en dispositivo.
-- Pantalla de ajustes, privacidad y límites.
+## Archivos
+- `index.html`
+- `styles.css`
+- `app.js`
+- `manifest.webmanifest`
+- `sw.js`
+- `assets/icon-192.png`
+- `assets/icon-512.png`
