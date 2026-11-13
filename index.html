@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111019">
+  <meta name="description" content="InstaSave — guarda contenido público de Instagram al que tengas permiso de acceder.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>InstaSave</title>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="InstaSave inicio"><span class="brand-mark">↓</span><span>Insta<span class="brand-accent">Save</span></span></a>
+      <button class="icon-button" id="installBtn" hidden aria-label="Instalar aplicación">⇩</button>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> TU CONTENIDO, A UN TOQUE</div>
+      <h1>Guarda lo que<br><span>te inspira.</span></h1>
+      <p class="subhead">Imágenes, carruseles, reels y publicaciones públicas en un solo lugar.</p>
+    </section>
+
+    <section class="glass-panel downloader" aria-label="Descargar contenido">
+      <label for="igUrl">Enlace de Instagram</label>
+      <div class="url-row">
+        <span class="link-icon">↗</span>
+        <input id="igUrl" type="url" inputmode="url" placeholder="https://www.instagram.com/p/..." autocomplete="off">
+        <button class="paste-btn" id="pasteBtn" type="button">Pegar</button>
+      </div>
+      <button class="primary-btn" id="analyzeBtn" type="button"><span>Analizar enlace</span><span>→</span></button>
+      <p class="micro-note" id="status" role="status">Admite enlaces de publicaciones, reels y carruseles públicos.</p>
+    </section>
+
+    <section class="result glass-panel" id="result" hidden>
+      <div class="section-heading"><div><span class="eyebrow">CONTENIDO DETECTADO</span><h2>Vista previa</h2></div><span class="status-chip">Enlace válido</span></div>
+      <div class="preview-placeholder"><span class="preview-symbol">▧</span><span>La vista previa aparecerá cuando conectemos el servicio de procesamiento.</span></div>
+      <p class="micro-note">La descarga se habilitará al conectar un backend compatible. No se accede a cuentas privadas ni se omiten restricciones de Instagram.</p>
+    </section>
+
+    <section class="formats">
+      <div class="section-heading"><div><span class="eyebrow">COMPATIBILIDAD</span><h2>Todo tu contenido</h2></div></div>
+      <div class="format-grid">
+        <article class="format-card glass-panel"><span class="format-icon">▧</span><b>Imágenes</b><small>Fotos individuales</small></article>
+        <article class="format-card glass-panel"><span class="format-icon">▤</span><b>Carruseles</b><small>Varias imágenes</small></article>
+        <article class="format-card glass-panel"><span class="format-icon">▷</span><b>Reels</b><small>Videos cortos</small></article>
+        <article class="format-card glass-panel"><span class="format-icon">▣</span><b>Publicaciones</b><small>Contenido público</small></article>
+      </div>
+    </section>
+
+    <section class="history glass-panel">
+      <div class="section-heading"><div><span class="eyebrow">EN ESTE DISPOSITIVO</span><h2>Actividad reciente</h2></div><button class="text-button" id="clearHistory">Limpiar</button></div>
+      <div id="historyList" class="empty-history"><span>◷</span><p>Tus enlaces analizados aparecerán aquí.</p></div>
+    </section>
+
+    <footer>InstaSave <span>•</span> Uso responsable del contenido</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
