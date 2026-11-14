@@ -1,4 +1,4 @@
-# InstaSave — Downloader v0.3
+# InstaSave — Downloader v0.4
 
 PWA de descarga conectada al backend OmniDL.
 
@@ -36,3 +36,10 @@ El backend OmniDL debe permitir el origen `https://pexa0n2k-hub.github.io` en `F
 - Instagram puede bloquear o limitar solicitudes incluso para publicaciones públicas. No se garantiza que todos los enlaces funcionen.
 - No admite cuentas privadas ni elude inicios de sesión o controles de acceso.
 - Descarga únicamente contenido propio o que tengas permiso para guardar y respeta derechos de autor y condiciones de Instagram.
+
+
+## v0.4 — vistas previas tipo tarjeta
+- Miniaturas compactas con altura fija.
+- Carruseles y publicaciones múltiples en cuadrícula de dos columnas.
+- Publicación individual centrada y limitada a un ancho máximo.
+- Controles de formato y descarga más compactos.
