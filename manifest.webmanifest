@@ -1,7 +1,7 @@
 {
   "name": "InstaSave",
   "short_name": "InstaSave",
-  "description": "Guarda contenido público de Instagram al que tengas permiso de acceder.",
+  "description": "Descarga fotos, carruseles y Reels públicos que tienes permiso para guardar.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
